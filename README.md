@@ -1,4 +1,4 @@
-# Sobre: Script para identificar todos os dispositivos OnLine na rede (Informações detalhadas), vulnerabilidades e arquivos ocultos na web. <br>
+# Sobre: Script para subir um servidor e o site na rede ONION. <br>
 
 <b># Install_Tor<b><br>
 Linkedin: https://www.linkedin.com/in/thalles-canela/ <br>
