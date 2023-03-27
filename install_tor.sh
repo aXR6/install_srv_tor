@@ -27,6 +27,11 @@ toolxmenu(){
 
 INSTALLSRVTOR()
 {
+echo -e "\033[32;1m[✔] Preparando o ambiente \033[m"
+sudo apt install apache2 apache2-utils php php-cli php-mysql libapache2-mod-php php-gd php-xml php-curl php-common -y -y && 
+systemctl enable apache2 && 
+systemctl start apache2
+
 echo -e "\033[32;1m[✔] Configuração das variáveis \033[m"
 TOR_SOCKS_PORT=9050
 TOR_CONTROL_PORT=9051
