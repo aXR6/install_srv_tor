@@ -27,16 +27,16 @@ toolxmenu(){
 
 INSTALLSRVTOR()
 {
-echo -e "\033[1;31m[✔] Configuração das variáveis
+echo -e "\033[32;1m[✔] Configuração das variáveis \033[m"
 TOR_SOCKS_PORT=9050
 TOR_CONTROL_PORT=9051
 WEB_SERVER_PORT=80
 WEB_SERVER_ROOT=/var/www/html
 
-echo -e "\033[1;31m[✔] Inicia o servidor web \033[0m \033[1;31m \033[0m"
+echo -e "\033[32;1m[✔] Inicia o servidor web \033[m"
 sudo service apache2 start
 
-echo -e "\033[1;31m[✔] Configura o Tor para usar o servidor web como ponto de entrada \033[0m \033[1;31m \033[0m"
+echo -e "\033[32;1m[✔] Configura o Tor para usar o servidor web como ponto de entrada \033[m"
 cat <<EOF | sudo tee /etc/tor/torrc
 SocksPort $TOR_SOCKS_PORT
 ControlPort $TOR_CONTROL_PORT
@@ -44,11 +44,11 @@ HiddenServiceDir /var/lib/tor/web
 HiddenServicePort $WEB_SERVER_PORT 127.0.0.1:$WEB_SERVER_PORT
 EOF
 
-echo -e "\033[1;31m[✔] Reinicia o Tor para aplicar as alterações \033[0m \033[1;31m \033[0m"
+echo -e "\033[32;1m[✔] Reinicia o Tor para aplicar as alterações \033[m"
 sudo service tor restart
 
-echo -e "\033[1;31m[✔] Exibe o endereço .onion gerado pelo Tor \033[0m \033[1;31m \033[0m"
-echo "Seu servidor está agora disponível na rede Tor em:"
+echo -e "\033[32;1m[✔] Exibe o endereço .onion gerado pelo Tor \033[m"
+echo -e "\033[32;1m[✔] Seu servidor está agora disponível na rede Tor em: \033[m"
 sudo cat /var/lib/tor/web/hostname
 }
 
